@@ -27,6 +27,7 @@ const config: Config = {
       },
     },
   },
+  // eslint-disable-next-line
   plugins: [require('@tailwindcss/forms')],
 };
 export default config;
