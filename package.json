@@ -3,7 +3,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -15,6 +16,7 @@
     "next-auth": "5.0.0-beta.25",
     "postcss": "8.5.1",
     "postgres": "^3.4.6",
+    "prettier": "^3.9.8",
     "react": "latest",
     "react-dom": "latest",
     "tailwindcss": "3.4.17",
@@ -30,5 +32,21 @@
     "eslint": "^9.0.0",
     "eslint-config-next": "^16.3.5",
     "eslint-config-prettier": "^10.1.8"
+  },
+  "lint": {
+    "*.ts?(x)": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.js?(x)": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.css": [
+      "prettier --write"
+    ]
   }
 }
