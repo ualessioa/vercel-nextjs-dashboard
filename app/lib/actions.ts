@@ -119,9 +119,13 @@ export async function deleteInvoice(id: string) {
   revalidatePath('/dashboard/invoices');
 }
 
-export async function authenticate(prevState: string | undefined, formData: FormData) {
+export async function authenticate(
+  redirectTo: string,
+  prevState: string | undefined,
+  formData: FormData
+) {
   try {
-    await signIn('credentials', formData);
+    await signIn('credentials', formData, { redirectTo });
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
